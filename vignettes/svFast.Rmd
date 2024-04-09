@@ -1,0 +1,46 @@
+---
+title: "Fast and parallelized math and stat functions"
+author: "Philippe Grosjean (phgrosjean@sciviews.org)"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+    fig_caption: yes
+vignette: >
+  %\VignetteIndexEntry{Fast and parallelized math and stat functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The {svFast} package provides a series of math and stat function that compute in parallel if the vector is large enough (by default >= 50,000 elements). Otherwise, these functions are simplified version of corresponding base R functions. They run on numeric vectors and do not retain any attributes of the input vector. They are **not** generic functions, on the contrary to their base R counterparts. They are designed to be fast when computing 100,000s to 100,000,000s items. Their names are the same as corresponding base functions followed by an underscore. For example, `log_()` is the fast version of `log()`.
+
+```{r}
+library(svFast)
+# The number of threads used for calculation can be changed with:
+#RcppParallel::setThreadOptions(numThreads = 4)
+```
+
+While vector `x` is short, the `fun_()` versions run sequentially at similar speed of base R equivalent for vectors roughly >= 1000 items. For smaller vectors, the overhead of Rcpp make these functions slower.
+
+```{r}
+x <- 1:10
+log_(x)
+identical(log_(x), log(x))
+# log in base 8
+log_(x, base = 8)
+bench::mark(log(x), log_(x)) # Slower with such a short vector
+```
+
+When `x` is long, the `fun_()` versions run in parallel and are much faster than the base R equivalent.
+
+```{r}
+x2 <- runif(1e5)
+# x2 size larger than 50,000, parallel computation activated
+bench::mark(log(x2), log_(x2)) # Faster (depends on number of threads)
+```
