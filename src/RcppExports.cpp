@@ -11,21 +11,34 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // log_
-NumericVector log_(NumericVector x, double base, const R_xlen_t paralen);
+RObject log_(RObject x, double base, const R_xlen_t paralen);
 RcppExport SEXP _svFast_log_(SEXP xSEXP, SEXP baseSEXP, SEXP paralenSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type base(baseSEXP);
     Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
     rcpp_result_gen = Rcpp::wrap(log_(x, base, paralen));
     return rcpp_result_gen;
 END_RCPP
 }
+// cos_
+NumericVector cos_(NumericVector x, const R_xlen_t paralen);
+RcppExport SEXP _svFast_cos_(SEXP xSEXP, SEXP paralenSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
+    rcpp_result_gen = Rcpp::wrap(cos_(x, paralen));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_svFast_log_", (DL_FUNC) &_svFast_log_, 3},
+    {"_svFast_cos_", (DL_FUNC) &_svFast_cos_, 2},
     {NULL, NULL, 0}
 };
 

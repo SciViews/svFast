@@ -7,12 +7,41 @@
 #' @param base the base of the logarithm (e = exp(1) by default)
 #' @param paralen the minimum length of x to use parallel computation (50000
 #' by default)
-#' @return a numeric vector with the log_base(x) values
+#' 
+#' @return a numeric vector or a data.frame with the log_base(x) values
+#' 
+#' @details
+#' This function does not behave exactly as [base::log()]. First, it
+#' delegates to [base::log()] when x is a **factor**, a **Date**,
+#' a **POSIXt**, a **difftime**, a **complex** vector or an **S4** object.
+#' 
+#' Second, for other objects than **S4**, it just computes the log and returns
+#' a similar object with identical attributes. If you need a method for, say,
+#' an S3 or S7 object, write it for **Math** and use [log_()] inside it for
+#' faster computation of large vectors. For **data.frame** it performs the
+#' computation on each column.
+#' 
+#' Finally, it does not warn in case `NaN` is returned somewhere in the vector
+#' ([base::log()] does).
+#' 
 #' @export
 #' @example
 #' log_(1:5)
 #' log_(1:5, base = 2.5)
-log_ <- function(x, base = 2.718282, paralen = 50000L) {
+log_ <- function(x, base = 2.718282, paralen = 5e4L) {
     .Call(`_svFast_log_`, x, base, paralen)
+}
+
+#' Fast parallel version of cosinus (when vector size >= 50000)
+#'
+#' @param x vector a numeric values
+#' @param paralen the minimum length of x to use parallel computation (50000
+#' by default)
+#' @return a numeric vector with the cos(x) values
+#' @export
+#' @example
+#' cos_(1:5)
+cos_ <- function(x, paralen = 50000L) {
+    .Call(`_svFast_cos_`, x, paralen)
 }
 

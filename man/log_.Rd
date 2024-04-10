@@ -15,8 +15,22 @@ log_(x, base = 2.718282, paralen = 50000L)
 by default)}
 }
 \value{
-a numeric vector with the log_base(x) values
+a numeric vector or a data.frame with the log_base(x) values
 }
 \description{
 Fast parallel version of log(x, base) (when vector size >= 50000)
+}
+\details{
+This function does not behave exactly as \code{\link[base:Log]{base::log()}}. First, it
+delegates to \code{\link[base:Log]{base::log()}} when x is a \strong{factor}, a \strong{Date},
+a \strong{POSIXt}, a \strong{difftime}, a \strong{complex} vector or an \strong{S4} object.
+
+Second, for other objects than \strong{S4}, it just computes the log and returns
+a similar object with identical attributes. If you need a method for, say,
+an S3 or S7 object, write it for \strong{Math} and use \code{\link[=log_]{log_()}} inside it for
+faster computation of large vectors. For \strong{data.frame} it performs the
+computation on each column.
+
+Finally, it does not warn in case \code{NaN} is returned somewhere in the vector
+(\code{\link[base:Log]{base::log()}} does).
 }

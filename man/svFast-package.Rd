@@ -9,22 +9,40 @@
 A series of fast math and stat functions, parallelized using RcppParallel.
 }
 \details{
-This section should provide a more detailed overview of how to use the
-package, including the most important functions.
+Parallelized code must be thread-safe. Not all R functions are thread-safe
+and the documentation state that the decision is for "expert only". So, we
+trust Luke Thierney, an expert and member of the R code team, on the
+functions that can be parallelized from its experimental package 'pnmath'
+that can be found here:
+https://homepage.divms.uiowa.edu/~luke/R/experimental/
+
+Here is an extract of its README file:
+"The following functions have not been parallelized as their
+implementations are not thread-safe and how to make them so is not
+obvious:
+
+dsignrank, psignrank, qsignrank, dwilcox, pwilcox, qwilcox:
+
+These use allocation and a global for allocated space; they
+also use R_CheckUserInterrupt for interrupt checking and stack
+checking of recursions.
+
+bessel_j, bessel_y, bessel_i, bessel_k:
+
+These use R_alloc, vmaxget/vmaxset."
 }
 \section{Math functions}{
 
-More info about parallelized math functions
+TODO: More info about parallelized math functions
 }
 
 \section{Stat functions}{
 
-More info about stat functions...
+TODO: More info about stat functions...
 }
 
 \references{
-This optional section can contain literature or other references for
-background information.
+TODO...
 }
 \author{
 \strong{Maintainer}: Philippe Grosjean \email{phgrosjean@sciviews.org} (\href{https://orcid.org/0000-0002-2694-9471}{ORCID})
