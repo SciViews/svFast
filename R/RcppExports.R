@@ -3,12 +3,12 @@
 
 #' Fast parallel version of log(x, base) (when vector size >= 50000)
 #'
-#' @param x vector a numeric values
-#' @param base the base of the logarithm (e = exp(1) by default)
-#' @param paralen the minimum length of x to use parallel computation (50000
+#' @param x vector of numeric values
+#' @param base the base of the logarithm (e = `exp(1)` by default)
+#' @param paralen the minimum length of `x` to use parallel computation (50000
 #' by default)
 #' 
-#' @return a numeric vector or a data.frame with the log_base(x) values
+#' @return A numeric vector, matrix, or data frame with the transformed values.
 #' 
 #' @details
 #' This function does not behave exactly as [base::log()]. First, it
@@ -25,23 +25,104 @@
 #' ([base::log()] does).
 #' 
 #' @export
-#' @example
+#' @examples
 #' log_(1:5)
 #' log_(1:5, base = 2.5)
 log_ <- function(x, base = 2.718282, paralen = 5e4L) {
     .Call(`_svFast_log_`, x, base, paralen)
 }
 
-#' Fast parallel version of cosinus (when vector size >= 50000)
+#' Rounding of Numbers (Fast Parallel Version)
+#' 
+#' @name Round_
+#' @description
+#' Fast version of rounding (when vector size >= 50000).
+#' [ceiling_()] takes a single numeric argument x and returns a numeric vector
+#' containing the smallest integers not less than the corresponding elements of
+#' `x`. It is similar to [ceiling()].
+#' 
+#' [floor_()] takes a single numeric argument `x` and returns a numeric vector
+#' containing the largest integers not greater than the corresponding elements of
+#' `x`. It is similar to [floor()].
+#' 
+#' [trunc_()] takes a single numeric argument `x` and returns a numeric vector
+#' containing the integers formed by truncating the values in `x` toward 0. It
+#' is similar to [trunc()].
 #'
-#' @param x vector a numeric values
-#' @param paralen the minimum length of x to use parallel computation (50000
+#' @param x vector of numeric values
+#' @param paralen the minimum length of `x` to use parallel computation (50000
 #' by default)
-#' @return a numeric vector with the cos(x) values
+#' 
+#' @return A numeric vector, matrix, or data frame with the transformed values.
+#' 
+#' @details
+#' They are **not** generic functions.
+#' In case of factor, Date, POSIXt, difftime, complex, or S4 objects, the
+#' function delegates to the base function. For data frames, no dispatching is
+#' done and direct column-wise computation is performed. All attributes are
+#' preserved.
+#' 
 #' @export
-#' @example
+#' @seealso [ceiling()], [floor()], [trunc()]
+#' @examples
+#' floor_(c(1.23, 4.56, -7.89))
+ceiling_ <- function(x, paralen = 5e4L) {
+    .Call(`_svFast_ceiling_`, x, paralen)
+}
+
+#' @rdname Round_
+#' @export
+floor_ <- function(x, paralen = 5e4L) {
+    .Call(`_svFast_floor_`, x, paralen)
+}
+
+#' @rdname Round_
+#' @export
+trunc_ <- function(x, paralen = 5e4L) {
+    .Call(`_svFast_trunc_`, x, paralen)
+}
+
+#' Trigonometric Functions (Fast Parallel Version)
+#' 
+#' @name Trig_
+#' @description
+#' Fast version of trigonometric functions (when vector size >= 50000). They
+#' respectively compute the cosine, sine, tangent, arc-cosine, arc-sine,
+#' arc-tangent, and the two-argument arc-tangent.
+#' 
+#'  `cospi_(x)`, `sinpi_(x)`, and `tanpi_(x)`, compute `cos(pi*x)`,
+#'  `sin(pi*x)`, and `tan(pi*x)`.
+#'
+#' @param x vector of numeric values
+#' @param paralen the minimum length of `x` to use parallel computation (50000
+#' by default)
+#' 
+#' @return A numeric vector, matrix, or data frame with the transformed values.
+#' 
+#' @details
+#' They are **not** generic functions.
+#' In case of factor, Date, POSIXt, difftime, complex, or S4 objects, the
+#' function delegates to the base function. For data frames, no dispatching is
+#' done and direct column-wise computation is performed. All attributes are
+#' preserved.
+#' 
+#' @export
+#' @seealso [cos()], [sin()], [tan()], [acos()], [asin()], [atan()], [atan2()]
+#' @examples
 #' cos_(1:5)
-cos_ <- function(x, paralen = 50000L) {
+cos_ <- function(x, paralen = 5e4L) {
     .Call(`_svFast_cos_`, x, paralen)
+}
+
+#' @rdname Trig_
+#' @export
+sin_ <- function(x, paralen = 5e4L) {
+    .Call(`_svFast_sin_`, x, paralen)
+}
+
+#' @rdname Trig_
+#' @export
+tan_ <- function(x, paralen = 5e4L) {
+    .Call(`_svFast_tan_`, x, paralen)
 }
 

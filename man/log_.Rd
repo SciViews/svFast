@@ -7,15 +7,15 @@
 log_(x, base = 2.718282, paralen = 50000L)
 }
 \arguments{
-\item{x}{vector a numeric values}
+\item{x}{vector of numeric values}
 
-\item{base}{the base of the logarithm (e = exp(1) by default)}
+\item{base}{the base of the logarithm (e = \code{exp(1)} by default)}
 
-\item{paralen}{the minimum length of x to use parallel computation (50000
+\item{paralen}{the minimum length of \code{x} to use parallel computation (50000
 by default)}
 }
 \value{
-a numeric vector or a data.frame with the log_base(x) values
+A numeric vector, matrix, or data frame with the transformed values.
 }
 \description{
 Fast parallel version of log(x, base) (when vector size >= 50000)
@@ -33,4 +33,8 @@ computation on each column.
 
 Finally, it does not warn in case \code{NaN} is returned somewhere in the vector
 (\code{\link[base:Log]{base::log()}} does).
+}
+\examples{
+log_(1:5)
+log_(1:5, base = 2.5)
 }
