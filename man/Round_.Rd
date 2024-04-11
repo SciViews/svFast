@@ -5,19 +5,30 @@
 \alias{ceiling_}
 \alias{floor_}
 \alias{trunc_}
+\alias{round_}
+\alias{signif_}
 \title{Rounding of Numbers (Fast Parallel Version)}
 \usage{
-ceiling_(x, paralen = 50000L)
+ceiling_(x, para = 50000L)
 
-floor_(x, paralen = 50000L)
+floor_(x, para = 50000L)
 
-trunc_(x, paralen = 50000L)
+trunc_(x, para = 50000L)
+
+round_(x, digits = 0L, para = 50000L)
+
+signif_(x, digits = 6L, para = 50000L)
 }
 \arguments{
 \item{x}{vector of numeric values}
 
-\item{paralen}{the minimum length of \code{x} to use parallel computation (50000
+\item{para}{the minimum length of \code{x} to use parallel computation (50000
 by default)}
+
+\item{digits}{integer indication the number of decimal places (\code{\link[=round_]{round_()}})
+or significant digits (\code{\link[=signif_]{signif_()}}) to be used. For \code{\link[=round_]{round_()}}, negative
+values are allowed and indicate rounding to a power of ten (-2 means
+rounding to the nearest hundred), see \code{\link[=round]{round()}}.}
 }
 \value{
 A numeric vector, matrix, or data frame with the transformed values.
@@ -35,17 +46,25 @@ containing the largest integers not greater than the corresponding elements of
 \code{\link[=trunc_]{trunc_()}} takes a single numeric argument \code{x} and returns a numeric vector
 containing the integers formed by truncating the values in \code{x} toward 0. It
 is similar to \code{\link[=trunc]{trunc()}}.
+
+\code{\link[=round_]{round_()}} rounds the values in its first argument to the
+specified number of decimal places (default 0). See 'Details' about "round
+to even" in \code{\link[=round]{round()}} when rounding off a 5.
+
+\code{\link[=signif_]{signif_()}} rounds the values in its first argument to the
+specified number of significant digits.
 }
 \details{
-They are \strong{not} generic functions.
-In case of factor, Date, POSIXt, difftime, complex, or S4 objects, the
-function delegates to the base function. For data frames, no dispatching is
-done and direct column-wise computation is performed. All attributes are
-preserved.
+They are \strong{not} generic functions and do not process factor, Date, POSIXt,
+difftime, complex, or S4 objects (use base R equivalent function instead).
+Data frames are processed column-wise, providing each column is compatible.
+All attributes are preserved.
 }
 \examples{
 floor_(c(1.23, 4.56, -7.89))
 }
 \seealso{
 \code{\link[=ceiling]{ceiling()}}, \code{\link[=floor]{floor()}}, \code{\link[=trunc]{trunc()}}
+
+\code{\link[=round]{round()}}, \code{\link[=signif]{signif()}}
 }

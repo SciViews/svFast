@@ -1,11 +1,11 @@
-test_that("log_() gives same results as log()", {
+test_that("log_() gives similar results as log()", {
   # Sequential version
   expect_equal(log_(1:5), log(1:5))
   expect_equal(log_(1:5, base = 2.5), log(1:5, base = 2.5))
   
   # Parallel version
   expect_equal(log_(1:40), log(1:40))
-  expect_equal(log_(1:40, base = 3.3, paralen = 20), log(1:40, base = 3.3))
+  expect_equal(log_(1:40, base = 3.3, para = 20), log(1:40, base = 3.3))
   
   # From here, we test only in sequential mode, since core code is the same
   # Edge cases
@@ -33,17 +33,17 @@ test_that("log_() gives same results as log()", {
   expect_error(log_(NULL))
   expect_error(log_("a"))
   
-  # Delegation to log()
+  # Incompatible objects, use log() instead
   expect_error(log_(as.factor(1:5)))
   expect_error(log_(Sys.Date()))
   expect_error(log_(Sys.time()))
   expect_error(log_(difftime(Sys.time(), Sys.time())))
-  expect_equal(log_(as.complex(1:5)), log(as.complex(1:5)))
+  expect_error(log_(as.complex(1:5)))
   
   # S4 object (also deleguated to log())
   setClass("CoordsTest", representation(lat = "numeric", long = "numeric"))
   coords <- new("CoordsTest", lat = 50.46339, long = 3.95528)
-  # No method defined (yet) for this object
+  # Not compatible with S4 objects
   expect_error(log_(coords))
   # But can apply on slots
   expect_equal(log_(coords@lat), log(coords@lat))
@@ -53,7 +53,7 @@ test_that("log_() gives same results as log()", {
   df <- data.frame(x = 1:30, y = 6:35)
   expect_equal(log_(df), log(df))
   # Parallel
-  expect_equal(log_(df, paralen = 20), log(df))
+  expect_equal(log_(df, para = 20), log(df))
   # If there is an incompatible column, this generates an error
   df$z <- as.factor(1:30)
   expect_error(log_(df))

@@ -10,100 +10,271 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// ceiling_
+RObject ceiling_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_ceiling_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(ceiling_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// floor_
+RObject floor_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_floor_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(floor_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// trunc_
+RObject trunc_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_trunc_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(trunc_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cos_
+RObject cos_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_cos_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(cos_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sin_
+RObject sin_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_sin_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(sin_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// tan_
+RObject tan_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_tan_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(tan_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// acos_
+RObject acos_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_acos_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(acos_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// asin_
+RObject asin_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_asin_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(asin_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// atan_
+RObject atan_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_atan_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(atan_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// cospi_
+RObject cospi_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_cospi_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(cospi_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sinpi_
+RObject sinpi_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_sinpi_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(sinpi_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// tanpi_
+RObject tanpi_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_tanpi_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(tanpi_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// log10_
+RObject log10_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_log10_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(log10_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// log2_
+RObject log2_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_log2_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(log2_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// log1p_
+RObject log1p_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_log1p_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(log1p_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// exp_
+RObject exp_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_exp_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(exp_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
+// expm1_
+RObject expm1_(RObject x, const R_xlen_t para);
+RcppExport SEXP _svFast_expm1_(SEXP xSEXP, SEXP paraSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(expm1_(x, para));
+    return rcpp_result_gen;
+END_RCPP
+}
 // log_
-RObject log_(RObject x, double base, const R_xlen_t paralen);
-RcppExport SEXP _svFast_log_(SEXP xSEXP, SEXP baseSEXP, SEXP paralenSEXP) {
+RObject log_(RObject x, double base, const R_xlen_t para);
+RcppExport SEXP _svFast_log_(SEXP xSEXP, SEXP baseSEXP, SEXP paraSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type base(baseSEXP);
-    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
-    rcpp_result_gen = Rcpp::wrap(log_(x, base, paralen));
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(log_(x, base, para));
     return rcpp_result_gen;
 END_RCPP
 }
-// ceiling_
-RObject ceiling_(RObject x, const R_xlen_t paralen);
-RcppExport SEXP _svFast_ceiling_(SEXP xSEXP, SEXP paralenSEXP) {
+// round_
+RObject round_(RObject x, const int digits, const R_xlen_t para);
+RcppExport SEXP _svFast_round_(SEXP xSEXP, SEXP digitsSEXP, SEXP paraSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
-    rcpp_result_gen = Rcpp::wrap(ceiling_(x, paralen));
+    Rcpp::traits::input_parameter< const int >::type digits(digitsSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(round_(x, digits, para));
     return rcpp_result_gen;
 END_RCPP
 }
-// floor_
-RObject floor_(RObject x, const R_xlen_t paralen);
-RcppExport SEXP _svFast_floor_(SEXP xSEXP, SEXP paralenSEXP) {
+// signif_
+RObject signif_(RObject x, const int digits, const R_xlen_t para);
+RcppExport SEXP _svFast_signif_(SEXP xSEXP, SEXP digitsSEXP, SEXP paraSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
-    rcpp_result_gen = Rcpp::wrap(floor_(x, paralen));
-    return rcpp_result_gen;
-END_RCPP
-}
-// trunc_
-RObject trunc_(RObject x, const R_xlen_t paralen);
-RcppExport SEXP _svFast_trunc_(SEXP xSEXP, SEXP paralenSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
-    rcpp_result_gen = Rcpp::wrap(trunc_(x, paralen));
-    return rcpp_result_gen;
-END_RCPP
-}
-// cos_
-RObject cos_(RObject x, const R_xlen_t paralen);
-RcppExport SEXP _svFast_cos_(SEXP xSEXP, SEXP paralenSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
-    rcpp_result_gen = Rcpp::wrap(cos_(x, paralen));
-    return rcpp_result_gen;
-END_RCPP
-}
-// sin_
-RObject sin_(RObject x, const R_xlen_t paralen);
-RcppExport SEXP _svFast_sin_(SEXP xSEXP, SEXP paralenSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
-    rcpp_result_gen = Rcpp::wrap(sin_(x, paralen));
-    return rcpp_result_gen;
-END_RCPP
-}
-// tan_
-RObject tan_(RObject x, const R_xlen_t paralen);
-RcppExport SEXP _svFast_tan_(SEXP xSEXP, SEXP paralenSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< RObject >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const R_xlen_t >::type paralen(paralenSEXP);
-    rcpp_result_gen = Rcpp::wrap(tan_(x, paralen));
+    Rcpp::traits::input_parameter< const int >::type digits(digitsSEXP);
+    Rcpp::traits::input_parameter< const R_xlen_t >::type para(paraSEXP);
+    rcpp_result_gen = Rcpp::wrap(signif_(x, digits, para));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_svFast_log_", (DL_FUNC) &_svFast_log_, 3},
     {"_svFast_ceiling_", (DL_FUNC) &_svFast_ceiling_, 2},
     {"_svFast_floor_", (DL_FUNC) &_svFast_floor_, 2},
     {"_svFast_trunc_", (DL_FUNC) &_svFast_trunc_, 2},
     {"_svFast_cos_", (DL_FUNC) &_svFast_cos_, 2},
     {"_svFast_sin_", (DL_FUNC) &_svFast_sin_, 2},
     {"_svFast_tan_", (DL_FUNC) &_svFast_tan_, 2},
+    {"_svFast_acos_", (DL_FUNC) &_svFast_acos_, 2},
+    {"_svFast_asin_", (DL_FUNC) &_svFast_asin_, 2},
+    {"_svFast_atan_", (DL_FUNC) &_svFast_atan_, 2},
+    {"_svFast_cospi_", (DL_FUNC) &_svFast_cospi_, 2},
+    {"_svFast_sinpi_", (DL_FUNC) &_svFast_sinpi_, 2},
+    {"_svFast_tanpi_", (DL_FUNC) &_svFast_tanpi_, 2},
+    {"_svFast_log10_", (DL_FUNC) &_svFast_log10_, 2},
+    {"_svFast_log2_", (DL_FUNC) &_svFast_log2_, 2},
+    {"_svFast_log1p_", (DL_FUNC) &_svFast_log1p_, 2},
+    {"_svFast_exp_", (DL_FUNC) &_svFast_exp_, 2},
+    {"_svFast_expm1_", (DL_FUNC) &_svFast_expm1_, 2},
+    {"_svFast_log_", (DL_FUNC) &_svFast_log_, 3},
+    {"_svFast_round_", (DL_FUNC) &_svFast_round_, 3},
+    {"_svFast_signif_", (DL_FUNC) &_svFast_signif_, 3},
     {NULL, NULL, 0}
 };
 

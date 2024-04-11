@@ -5,18 +5,36 @@
 \alias{cos_}
 \alias{sin_}
 \alias{tan_}
+\alias{acos_}
+\alias{asin_}
+\alias{atan_}
+\alias{cospi_}
+\alias{sinpi_}
+\alias{tanpi_}
 \title{Trigonometric Functions (Fast Parallel Version)}
 \usage{
-cos_(x, paralen = 50000L)
+cos_(x, para = 50000L)
 
-sin_(x, paralen = 50000L)
+sin_(x, para = 50000L)
 
-tan_(x, paralen = 50000L)
+tan_(x, para = 50000L)
+
+acos_(x, para = 50000L)
+
+asin_(x, para = 50000L)
+
+atan_(x, para = 50000L)
+
+cospi_(x, para = 50000L)
+
+sinpi_(x, para = 50000L)
+
+tanpi_(x, para = 50000L)
 }
 \arguments{
 \item{x}{vector of numeric values}
 
-\item{paralen}{the minimum length of \code{x} to use parallel computation (50000
+\item{para}{the minimum length of \code{x} to use parallel computation (50000
 by default)}
 }
 \value{
@@ -31,11 +49,10 @@ arc-tangent, and the two-argument arc-tangent.
 \code{sin(pi*x)}, and \code{tan(pi*x)}.
 }
 \details{
-They are \strong{not} generic functions.
-In case of factor, Date, POSIXt, difftime, complex, or S4 objects, the
-function delegates to the base function. For data frames, no dispatching is
-done and direct column-wise computation is performed. All attributes are
-preserved.
+They are \strong{not} generic functions and do not process factor, Date, POSIXt,
+difftime, complex, or S4 objects (use base R equivalent function instead).
+Data frames are processed column-wise, providing each column is compatible.
+All attributes are preserved.
 }
 \examples{
 cos_(1:5)
