@@ -4,6 +4,16 @@
 
 // TODO: add an inplace = FALSE argument... When TRUE, change the vector or data
 // frame in place (for data frame, just do not clone)
+// 
+// TODO: list of other functions to implements:
+// follow here: https://homepage.divms.uiowa.edu/~luke/R/experimental/
+// and here: https://github.com/atks/Rmath/blob/master/Rmath/Rmath.h
+// and here: https://github.com/wch/r-source/blob/trunk/src/main/names.c
+// and here for C functions: https://koor.fr/C/cmath/round.wp
+// For RcppParallel code for runif() and rnorm(), see rTRNG and dqrng
+// for step() in xoshiro,
+// see https://github.com/degski/xoroshiro/tree/master/xoroshiro
+// and https://gitlab.com/nssn/xoshiro/-/blob/main/include/xoshiro.h?ref_type=heads
 
 // [[Rcpp::depends(RcppParallel)]]
 #include <Rcpp.h>
@@ -250,7 +260,7 @@ RObject tanpi_(RObject x, const R_xlen_t para = 5e4) {
 //' Fast version of logarithmic and exponential functions (when vector size >=
 //' 50000). [log_()] computes the natural logarithm of `x` (base `e` by default),
 //' [log2_()] computes the base 2 logarithm, [log10_()] computes the base 10.
-//' [log1p_(x)] computes `log(1 + x)` accurately even for small `x`.
+//' [log1p_()] computes `log(1 + x)` accurately even for small `x`.
 //' 
 //' [exp_()] computes the exponential function. [expm1_()] computes `exp(x) - 1`
 //' accurately even for small `x`.

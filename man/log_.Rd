@@ -37,7 +37,7 @@ A numeric vector, matrix, or data frame with the transformed values.
 Fast version of logarithmic and exponential functions (when vector size >=
 50000). \code{\link[=log_]{log_()}} computes the natural logarithm of \code{x} (base \code{e} by default),
 \code{\link[=log2_]{log2_()}} computes the base 2 logarithm, \code{\link[=log10_]{log10_()}} computes the base 10.
-\link{log1p_(x)} computes \code{log(1 + x)} accurately even for small \code{x}.
+\code{\link[=log1p_]{log1p_()}} computes \code{log(1 + x)} accurately even for small \code{x}.
 
 \code{\link[=exp_]{exp_()}} computes the exponential function. \code{\link[=expm1_]{expm1_()}} computes \code{exp(x) - 1}
 accurately even for small \code{x}.

@@ -136,7 +136,7 @@ tanpi_ <- function(x, para = 5e4L) {
 #' Fast version of logarithmic and exponential functions (when vector size >=
 #' 50000). [log_()] computes the natural logarithm of `x` (base `e` by default),
 #' [log2_()] computes the base 2 logarithm, [log10_()] computes the base 10.
-#' [log1p_(x)] computes `log(1 + x)` accurately even for small `x`.
+#' [log1p_()] computes `log(1 + x)` accurately even for small `x`.
 #' 
 #' [exp_()] computes the exponential function. [expm1_()] computes `exp(x) - 1`
 #' accurately even for small `x`.
