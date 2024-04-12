@@ -11,7 +11,7 @@ A series of fast math and stat functions, parallelized using RcppParallel.
 \details{
 Parallelized code must be thread-safe. Not all R functions are thread-safe
 and the documentation state that the decision is for "expert only". So, we
-trust Luke Thierney, an expert and member of the R code team, on the
+trust Luke Tierney, an expert and member of the R code team, on the
 functions that can be parallelized from its experimental package 'pnmath'
 that can be found here:
 https://homepage.divms.uiowa.edu/~luke/R/experimental/

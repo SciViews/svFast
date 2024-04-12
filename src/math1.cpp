@@ -2,6 +2,9 @@
  * A parallel version of various math functions that accept a single argument.
  */
 
+// TODO: add an inplace = FALSE argument... When TRUE, change the vector or data
+// frame in place (for data frame, just do not clone)
+
 // [[Rcpp::depends(RcppParallel)]]
 #include <Rcpp.h>
 #include <RcppParallel.h>
