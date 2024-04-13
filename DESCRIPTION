@@ -9,7 +9,7 @@ Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
   comment = c(ORCID = "0000-0002-2694-9471")))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
 License: GPL-3
-Depends: R (>= 4.2.0), stats
+Depends: R (>= 4.0.0), stats
 Imports:
     Rcpp (>= 1.0.10),
     RcppParallel (>= 5.1.7)
