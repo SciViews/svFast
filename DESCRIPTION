@@ -20,6 +20,8 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0),
     bench
+Remotes:
+    RcppCore/RcppParallel
 LinkingTo: Rcpp, RcppParallel
 SystemRequirements: GNU make, Intel TBB, Windows: cmd.exe and cscript.exe, Solaris: g++ is required
 Roxygen: list(markdown = TRUE)
