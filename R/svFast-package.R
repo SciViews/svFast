@@ -34,11 +34,11 @@
 #' @references
 #'   TODO...
 #' @keywords internal
-#' @useDynLib svFast, .registration=TRUE
-#' @importFrom Rcpp evalCpp
-#' @importFrom RcppParallel RcppParallelLibs
 "_PACKAGE"
 
 ## usethis namespace: start
+#' @importFrom Rcpp evalCpp
+#' @importFrom RcppParallel RcppParallelLibs
+#' @useDynLib svFast, .registration=TRUE
 ## usethis namespace: end
 NULL
