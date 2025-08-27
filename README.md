@@ -27,8 +27,8 @@ You can install the development version of svFast from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("SciViews/svFast")
+# install.packages("remotes")
+remotes::install_github("SciViews/svFast")
 ```
 
 ## Example
