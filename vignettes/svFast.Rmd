@@ -1,21 +1,21 @@
 ---
-title: "Fast and parallelized math and stat functions"
+title: "'SciViews::R' - Fast and Parallelized R Functions"
 author: "Philippe Grosjean (phgrosjean@sciviews.org)"
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 3
     fig_caption: yes
 vignette: >
-  %\VignetteIndexEntry{Fast and parallelized math and stat functions}
+  %\VignetteIndexEntry{'SciViews::R' - Fast and Parallelized R Functions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(svFast)
 ```
 
 The {svFast} package provides a series of math and stat function that compute in parallel if the vector is large enough (by default >= 50,000 elements). Otherwise, these functions are simplified version of corresponding base R functions. They run on numeric vectors and do not retain any attributes of the input vector. They are **not** generic functions, on the contrary to their base R counterparts. They are designed to be fast when computing 100,000s to 100,000,000s items. Their names are the same as corresponding base functions followed by an underscore. For example, `log_()` is the fast version of `log()`.

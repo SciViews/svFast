@@ -1,3 +1,51 @@
-# svFast
 
-Fast (parallelized) functions for SciViews::R
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# ‘SciViews::R’ - Fast and Parallelized R Functions <a href="https://www.sciviews.org/svFast"><img src="man/figures/logo.png" align="right" height="138" /></a>
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/SciViews/svFast/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SciViews/svFast/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/SciViews/svFast/graph/badge.svg?token=1YyLPD4HkZ)](https://app.codecov.io/gh/SciViews/svFast)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/svFast)](https://CRAN.R-project.org/package=svFast)
+[![r-universe
+status](https://sciviews.r-universe.dev/badges/svFast)](https://sciviews.r-universe.dev/svFast)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+{svFast} is useful when you work with very large datasets (millions to
+billions rows). It parallelizes many math and stat functions for faster
+computation on those large vectors.
+
+## Installation
+
+You can install the development version of svFast from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("SciViews/svFast")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+``` r
+library(svFast)
+## basic example code
+```
+
+For further instructions, please, refer to the help pages at
+<https://www.sciviews.org/svFast/>.
+
+## Code of Conduct
+
+Please note that the {svMisc} package is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

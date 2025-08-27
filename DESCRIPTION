@@ -1,32 +1,35 @@
 Package: svFast
 Type: Package
-Version: 0.1.0
-Date: 2024-04-09
-Title: 'SciViews' - Fast and Parallelized Versions of Various R Functions
-Description: A series of fast math and stat functions, parallelized using RcppParallel.
+Version: 0.1.0.9000
+Title: 'SciViews::R' - Fast and Parallelized R Functions
+Description: A Series of Fast Math and Stat Functions, Parallelized using
+  'RcppParallel'.
 Authors@R: c(person("Philippe", "Grosjean", role = c("aut", "cre"),
   email = "phgrosjean@sciviews.org",
   comment = c(ORCID = "0000-0002-2694-9471")))
 Maintainer: Philippe Grosjean <phgrosjean@sciviews.org>
-License: GPL-3
-Depends: R (>= 4.0.0), stats
+Depends:
+    R (>= 4.2.0),
+    stats (>= 4.2.0)
 Imports:
     Rcpp (>= 1.0.10),
     RcppParallel (>= 5.1.7)
-Suggests: 
-    spelling,
-    covr,
-    knitr,
-    rmarkdown,
-    testthat (>= 3.0.0),
-    bench
-Remotes:
-    RcppCore/RcppParallel
+Suggests:
+    bench (>= 1.1.0),
+    covr (>= 3.5.0),
+    knitr (>= 1.42),
+    rmarkdown (>= 2.21),
+    spelling (>= 2.2.1),
+    testthat (>= 3.0.0)
 LinkingTo: Rcpp, RcppParallel
 SystemRequirements: GNU make, Intel TBB, Windows: cmd.exe and cscript.exe, Solaris: g++ is required
+License: MIT + file LICENSE
+URL: https://github.com/SciViews/svFast, https://www.sciviews.org/svFast/, https://sciviews.r-universe.dev/svFast
+BugReports: https://github.com/SciViews/svFast/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US
+ByteCompile: yes
 Config/testthat/edition: 3

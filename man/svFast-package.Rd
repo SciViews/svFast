@@ -44,6 +44,16 @@ TODO: More info about stat functions...
 \references{
 TODO...
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/SciViews/svFast}
+  \item \url{https://www.sciviews.org/svFast/}
+  \item \url{https://sciviews.r-universe.dev/svFast}
+  \item Report bugs at \url{https://github.com/SciViews/svFast/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Philippe Grosjean \email{phgrosjean@sciviews.org} (\href{https://orcid.org/0000-0002-2694-9471}{ORCID})
 
