@@ -149,8 +149,8 @@ Rcpp make these functions slower.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 6</span></span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> log(x)        200ns 230.04ns  2<span style="text-decoration: underline;">335</span>994.        0B        0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> log_(x)      1.55µs   1.79µs   <span style="text-decoration: underline;">543</span>488.        0B        0</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> log(x)     200.12ns 231.08ns  2<span style="text-decoration: underline;">288</span>864.        0B        0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> log_(x)      1.54µs   1.84µs   <span style="text-decoration: underline;">529</span>779.        0B        0</span></span></code></pre></div>
 <p>When <code>x</code> is long, the <code>fun_()</code> versions run in
 parallel and are much faster than the base R equivalent.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
@@ -160,8 +160,8 @@ parallel and are much faster than the base R equivalent.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 6</span></span></span>
 <span><span class="co">#&gt;   expression      min   median `itr/sec` mem_alloc `gc/sec`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;bch:expr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:tm&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;bch:byt&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> log(x2)       842µs    866µs     <span style="text-decoration: underline;">1</span>153.     781KB     17.7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> log_(x2)      405µs    423µs     <span style="text-decoration: underline;">2</span>344.     781KB     37.8</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> log(x2)       852µs    876µs     <span style="text-decoration: underline;">1</span>139.     781KB     17.8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> log_(x2)      406µs    426µs     <span style="text-decoration: underline;">2</span>336.     781KB     35.6</span></span></code></pre></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
