@@ -1,6 +1,6 @@
 Package: svFast
 Type: Package
-Version: 0.1.0.9000
+Version: 0.1.0
 Title: 'SciViews::R' - Fast and Parallelized R Functions
 Description: A Series of Fast Math and Stat Functions, Parallelized using
   'RcppParallel'.
