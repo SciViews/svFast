@@ -21,8 +21,6 @@ Suggests:
     rmarkdown (>= 2.21),
     spelling (>= 2.2.1),
     testthat (>= 3.0.0)
-Remotes:
-    RcppCore/RcppParallel
 LinkingTo: Rcpp, RcppParallel
 SystemRequirements: GNU make, Intel TBB, Windows: cmd.exe and cscript.exe, Solaris: g++ is required
 License: MIT + file LICENSE
